@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 function Register() {
-  const history = useHistory();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -53,7 +51,7 @@ function Register() {
       setPasswordConditions(false);
       setErrorMessage('');
 
-      history.push('/search');
+      window.location.href = '/search';
     } catch (error) {
       console.error(error);
       setErrorMessage('Error al registrar el usuario');
